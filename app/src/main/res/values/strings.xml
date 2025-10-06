@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Word Counter</string>
+    <string name="counted_result">Counted result</string>
+    <string name="count">Count</string>
+    <string name="count_options">Count Options</string>
+    <string name="chars_selection">Chars</string>
+    <string name="numbers_selection">Numbers</string>
+    <string name="spelling_marks_selection">Spelling marks</string>
+    <string name="words_selection">Words</string>
+    <string name="sentences_selection">Sentences</string>
+    <string-array name="count_options">
+        <item>Sentences</item>
+        <item>Words</item>
+        <item>Spelling marks</item>
+        <item>Numbers</item>
+        <item>Chars</item>
+    </string-array>
 </resources>
