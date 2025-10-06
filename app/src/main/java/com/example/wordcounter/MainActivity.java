@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,12 +49,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onBtnCountClick(View view) {
+        String userPhrase = this.edUserInput.getText().toString();
+
+        if (userPhrase.trim().isEmpty()){
+            Toast.makeText(this, "Input field is empty. Please enter some text.", Toast.LENGTH_SHORT).show();
+            this.tvCountResult.setText("");
+            return;
+        }
+
         if(this.spOptions.getSelectedItem().toString().equalsIgnoreCase(getString(R.string.chars_selection))) {
-            String userPhrase = this.edUserInput.getText().toString();
             int charsCount = CounterClass.getCharsCount(userPhrase);
             this.tvCountResult.setText(String.valueOf(charsCount));
         }
-
+        else if (this.spOptions.getSelectedItem().toString().equalsIgnoreCase(getString(R.string.numbers_selection))) {
+            int numbersCount = CounterClass.getNumbersCount(userPhrase);
+            this.tvCountResult.setText(String.valueOf(numbersCount));
+        }
+        else if (this.spOptions.getSelectedItem().toString().equalsIgnoreCase(getString(R.string.words_selection))) {
+            int wordsCount = CounterClass.getWordsCount(userPhrase);
+            this.tvCountResult.setText(String.valueOf(wordsCount));
+        }
+        else if (this.spOptions.getSelectedItem().toString().equalsIgnoreCase(getString(R.string.sentences_selection))) {
+            int sentencesCount = CounterClass.getSentencesCount(userPhrase);
+            this.tvCountResult.setText(String.valueOf(sentencesCount));
+        }
         else {
             this.tvCountResult.setText("Not implemented");
         }
