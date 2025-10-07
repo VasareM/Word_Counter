@@ -9,6 +9,7 @@
     <string name="sentences_selection">Sentences</string>
     <string name="not_implemented">Not implemented</string>
     <string name="empty_input_field">Input field is empty. Please enter some text.</string>
+    <string name="enter_text_hint">Enter text</string>
     <string-array name="count_options">
         <item>Sentences</item>
         <item>Words</item>
