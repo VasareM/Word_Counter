@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         String userPhrase = this.edUserInput.getText().toString();
 
         if (userPhrase.trim().isEmpty()){
-            Toast.makeText(this, "Input field is empty. Please enter some text.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.empty_input_field, Toast.LENGTH_SHORT).show();
             this.tvCountResult.setText("");
             return;
         }
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             this.tvCountResult.setText(String.valueOf(sentencesCount));
         }
         else {
-            this.tvCountResult.setText("Not implemented");
+            this.tvCountResult.setText(R.string.not_implemented);
         }
     }
 }
