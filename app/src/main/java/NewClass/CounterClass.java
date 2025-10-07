@@ -29,14 +29,6 @@ public class CounterClass {
         int wordCount=0;
         Matcher matcher = Pattern.compile("\\b\\w+\\b").matcher(userInput);
         while(matcher.find()) wordCount++;
-        /*
-        String[] words=userInput.trim().split("[ ,.]");
-        for (String word : words) {
-            if (!word.trim().isEmpty()) {
-                wordCount++;
-            }
-        }
-         */
         return wordCount;
     }
     public static int getSentencesCount(String userInput) {
@@ -48,31 +40,6 @@ public class CounterClass {
             String sentence = matcher.group().trim();
             if (!sentence.isEmpty()) sentenceCount++;
         }
-        /*
-        boolean hasTextAfterLastPeriod=false;
-        int lastPeriodIndex=-1;
-
-        for (int i=0; i<userInput.length(); i++) {
-            char c = userInput.charAt(i);
-            if (c == '.') {
-                sentenceCount++;
-                lastPeriodIndex=i;
-            }
-        }
-        if (sentenceCount>0) {
-            for (int i=lastPeriodIndex+1; i<userInput.length(); i++){
-                if(!Character.isWhitespace(userInput.charAt(i))) {
-                    hasTextAfterLastPeriod=true;
-                    break;
-                }
-            }
-            if(hasTextAfterLastPeriod) sentenceCount++;
-        }
-        else {
-            if (sentenceCount == 0 && !userInput.trim().isEmpty()) return 1;
-        }
-         */
         return sentenceCount;
     }
 }
-// static: nereikia kurti klasės instance'ų; kai nererikia accessint objekto; mažiau kodo
