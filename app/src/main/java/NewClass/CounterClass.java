@@ -34,7 +34,7 @@ public class CounterClass {
     public static int getSentencesCount(String userInput) {
         //making sure that both "word.word.word" and "word.word.word." would be counted as three sentences, and "word" as one;
         int sentenceCount = 0;
-        Matcher matcher = Pattern.compile("[^\\.]+(?:\\.|$)").matcher(userInput.trim());
+        Matcher matcher = Pattern.compile("[^.!?]+(?:[.!?]|$)").matcher(userInput.trim());
         //  [^\\.]+     one or more characters that are not a period; (?:\\.|$)     followed by a period or the end of string
         while (matcher.find()) {
             String sentence = matcher.group().trim();

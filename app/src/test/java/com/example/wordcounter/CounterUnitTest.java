@@ -182,6 +182,13 @@ public class CounterUnitTest {
         assertEquals(expected, actual);
     }
     @Test
+    public void testGetSentencesCount_sentenceWithStrangeEndings() {
+        String given = "Hello world!.. a . ??what. Welcome to 2025.? What is this?. this";
+        int actual = CounterClass.getSentencesCount(given);
+        int expected = 7;
+        assertEquals(expected, actual);
+    }
+    @Test
     public void testGetSentencesCount_sentenceWithManyCharacters() {
         String given = "Hello world! Welcome to 2025. this is a sentence, it is 1.now_another_sentence .. cat";
         int actual = CounterClass.getSentencesCount(given);
